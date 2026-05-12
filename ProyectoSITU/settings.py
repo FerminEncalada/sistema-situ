@@ -133,6 +133,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+CSRF_TRUSTED_ORIGINS = ['https://sistema-situ-production.up.railway.app']
 
 if os.environ.get('DATABASE_URL'):
     DATABASES['default'] = dj_database_url.config(
