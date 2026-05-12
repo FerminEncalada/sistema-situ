@@ -135,6 +135,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 CSRF_TRUSTED_ORIGINS = ['https://sistema-situ-production.up.railway.app']
 
+MEDIA_URL = '/img/'
+MEDIA_ROOT = BASE_DIR / 'img'
+
 if os.environ.get('DATABASE_URL'):
     DATABASES['default'] = dj_database_url.config(
         conn_max_age=600,
